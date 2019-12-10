@@ -1,0 +1,7 @@
+sklearn
+tensorflow-gpu
+tf-nightly-gpu
+hdf5storage
+scipy
+numpy
+open3d-python
