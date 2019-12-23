@@ -1,0 +1,8 @@
+Namespace(batch_size=8, decay_rate=0.7, decay_step=400000, gpu=0, learning_rate=0.0001, log_dir='log_correspondences_supervised', max_epoch=6000, model='model_clean', momentum=0.9, no_rotation=False, num_point=1000, optimizer='adam')
+pid: 31009
+**** EPOCH 000 ****
+2019-12-23 16:05:47.076604
+ -- 010 / 061 --
+ -- 020 / 061 --
+ -- 030 / 061 --
+ -- 040 / 061 --
