@@ -1,20 +1,44 @@
->📋  A template README.md for code accompanying a Machine Learning paper
 
-# My Paper Title
+# Correspondence Learning via Linearly-invariant Embedding
 
-This repository is the official implementation of [My Paper Title](https://arxiv.org/abs/2030.12345). 
+This repository is the official implementation of [Correspondence Learning via Linearly-invariant Embedding](https://arxiv.org/abs/2030.12345)
 
->📋  Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
+This code was written by [Marie-Julie Rakotosaona](http://www.lix.polytechnique.fr/Labo/Marie-Julie.RAKOTOSAONA/) and [Riccardo Marin](http://profs.scienze.univr.it/~marin/).
 
 ## Requirements
 
-To install requirements:
+### Prerequisites:
+* CUDA and CuDNN
+* Python 2.7
+* Tensorflow 1.15
 
-```setup
-pip install -r requirements.txt
+
+
+
+
+## Pre-trained Models
+
+You can download pretrained models here:
+
+- [Pretrained model](https://drive.google.com/mymodel.pth)
+
+
+Download pretrained models from code:
+``` bash
+cd models
+python download_models.py
+```
+## Dataset
+
+
+- [Our dataset](https://drive.google.com/mymodel.pth)
+
+Download dataset from code:
+``` bash
+cd data
+python download_data.py
 ```
 
->📋  Describe how to set up the environment, e.g. pip/conda/docker commands, download datasets, etc...
 
 ## Training
 
@@ -36,27 +60,34 @@ python eval.py --model-file mymodel.pth --benchmark imagenet
 
 >📋  Describe how to evaluate the trained models on benchmarks reported in the paper, give commands that produce the results (section below).
 
-## Pre-trained Models
-
-You can download pretrained models here:
-
-- [My awesome model](https://drive.google.com/mymodel.pth) trained on ImageNet using parameters x,y,z. 
-
->📋  Give a link to where/how the pretrained models can be downloaded and how they were trained (if applicable).  Alternatively you can have an additional column in your results table with a link to the models.
-
 ## Results
 
-Our model achieves the following performance on :
+The evaluation of the correspondence for point clouds generated from the FAUST dataset without or with additional noise as mean error, with cumulative curves and a qualitative example.
 
-### [Image Classification on ImageNet](https://paperswithcode.com/sota/image-classification-on-imagenet)
 
-| Model name         | Top 1 Accuracy  | Top 5 Accuracy |
+![results](images/diff_maps_results.png "results")
+
+
+
+| Method         | No noise  | Noise |
 | ------------------ |---------------- | -------------- |
-| My awesome model   |     85%         |      95%       |
+| our  |    5.4e-2         |      6.6e-2       |
+| GFM  |    2.9e-1         |      3.4e-1       |
+| Uni20  |  7.5e-2         |      8.5e-2       |
+| Uni60 |   6.9e-2         |      8.1e-23       |
+| 3DC |     7.0e-2         |      7.3e-2       |
+| FMAP |    1.3e-1         |      1.4e-1       |
+| FMAP+ZOO |1.1e-1         |      1.3e-1       |
+| GFM+ZOO | 3.1e-1         |      3.8e-1       |
 
->📋  Include a table of results from your paper, and link back to the leaderboard for clarity and context. If your main result is a figure, include that figure and link to the command or notebook to reproduce it. 
 
 
-## Contributing
 
->📋  Pick a licence and describe how to contribute to your code repository. 
+
+## Citation
+If you use our work, please cite our paper.
+
+
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/). For any commercial uses or derivatives, please contact us.
