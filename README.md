@@ -20,18 +20,18 @@ This code was written by [Marie-Julie Rakotosaona](http://www.lix.polytechnique.
 
 You can download pretrained models here:
 
-- [Pretrained model](https://drive.google.com/mymodel.pth)
+- [Pretrained model](https://nuage.lix.polytechnique.fr/index.php/s/kZP65iLt5M9H7Hq/download)
 
 
 Download pretrained models from code:
 ``` bash
-cd models
+cd pretrained_models
 python download_models.py
 ```
 ## Dataset
 
 
-- [Our dataset](https://drive.google.com/mymodel.pth)
+- [Our dataset](https://nuage.lix.polytechnique.fr/index.php/s/22YrGsJ7M4dx7Ay/download)
 
 Download dataset from code:
 ``` bash
@@ -68,9 +68,9 @@ python src/test.py
 Run custom model:
 ```eval
 mkdir results
-python src/test.py --model_path "path to custom trained model"
+python src/test.py --model_path "path to custom trained descriptors model"
 ```
-
+(a pretrained descriptors model already contains the weights of a corresponding basis model)
 ## Results
 
 The evaluation of the correspondence for point clouds generated from the FAUST dataset without or with additional noise as mean error, with cumulative curves and a qualitative example.
