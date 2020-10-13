@@ -42,23 +42,34 @@ python download_data.py
 
 ## Training
 
-To train the model(s) in the paper, run this command:
+To train the basis model:
 
-```train
-python train.py --input-data <path_to_data> --alpha 10 --beta 20
+```train basis model
+python src/train_basis.py --log_dir "path to basis model directory"
 ```
 
->📋  Describe how to train the models, with example commands on how to train the models in your paper, including the full training procedure and appropriate hyperparameters.
+To train the transformation model:
+
+
+```train transformation model
+python src/train_descriptors.py --log_dir "path to transformation model directory" --model_path "path to basis model"
+```
 
 ## Evaluation
 
-To evaluate my model on ImageNet, run:
+To evaluate a model run:
 
+Run pretrained model on testset:
 ```eval
-python eval.py --model-file mymodel.pth --benchmark imagenet
+mkdir results
+python src/test.py
 ```
 
->📋  Describe how to evaluate the trained models on benchmarks reported in the paper, give commands that produce the results (section below).
+Run custom model:
+```eval
+mkdir results
+python src/test.py --model_path "path to custom trained model"
+```
 
 ## Results
 
