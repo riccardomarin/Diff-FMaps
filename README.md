@@ -57,20 +57,13 @@ python src/train_descriptors.py --log_dir "path to transformation model director
 
 ## Evaluation
 
-To evaluate a model run:
+To evaluate a model, you can use the "test.py" file. For example, to evaluate the pre-trained model on the Noise dataset:
 
 Run pretrained model on testset:
 ```eval
-mkdir results
-python src/test.py
+python .\src\test.py --i FAUST_noise_0.01 -n log_model --epoch=4427
 ```
 
-Run custom model:
-```eval
-mkdir results
-python src/test.py --model_path "path to custom trained descriptors model"
-```
-(a pretrained descriptors model already contains the weights of a corresponding basis model)
 ## Results
 
 The evaluation of the correspondence for point clouds generated from the FAUST dataset without or with additional noise as mean error, with cumulative curves and a qualitative example.
@@ -85,15 +78,16 @@ The evaluation of the correspondence for point clouds generated from the FAUST d
 | our  |    5.4e-2         |      6.6e-2       |
 | GFM  |    2.9e-1         |      3.4e-1       |
 | Uni20  |  7.5e-2         |      8.5e-2       |
-| Uni60 |   6.9e-2         |      8.1e-23       |
+| Uni60 |   6.9e-2         |      8.1e-2       |
 | 3DC |     7.0e-2         |      7.3e-2       |
 | FMAP |    1.3e-1         |      1.4e-1       |
 | FMAP+ZOO |1.1e-1         |      1.3e-1       |
 | GFM+ZOO | 3.1e-1         |      3.8e-1       |
 
+To replicate our evaluation, you can run the "evaluation.m" in Matlab. It is already configurated to run on the output of pre-trained model.
+In the paper we computed the geodesic distance matrices using an old pre-compiled .max file for fastmarch algorithm. For the moment (and for the sake of semplicity), in this git we attached a pre-computed geodesic distance matrix used for all the pairs. It is an approximation, but this will let you run the evaluation. This should return to you a plot like this:
 
-
-
+![curves](images/noise_curves.png "curves")
 
 ## Citation
 If you use our work, please cite our paper.
