@@ -85,7 +85,7 @@ The evaluation of the correspondence for point clouds generated from the FAUST d
 | GFM+ZOO | 3.1e-1         |      3.8e-1       |
 
 To replicate our evaluation, you can run the "evaluation.m" in Matlab. It is already configurated to run on the output of pre-trained model.
-In the paper we computed the geodesic distance matrices using an old pre-compiled .max file for fastmarch algorithm. For the moment (and for the sake of semplicity), in this git we attached a pre-computed geodesic distance matrix used for all the pairs. It is an approximation, but this will let you run the evaluation. This should return to you a plot like this:
+In the paper we computed the geodesic distance matrices using an old pre-compiled .mex file for fastmarch algorithm. For the moment (and for the sake of semplicity), in this git we attached a pre-computed geodesic distance matrix used for all the pairs. It is an approximation, but this will let you run the evaluation. This should return to you a plot like this:
 
 ![curves](images/noise_curves.png "curves")
 
