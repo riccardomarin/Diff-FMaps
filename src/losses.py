@@ -69,12 +69,16 @@ def get_basis_loss(pcA, pcB, basisA, basisB):
     euc_dist = euc_dist_err(pcB, smax)
     return euc_dist
 
+
 def get_descriptors_loss(pred_basisA, descriptorsA,pred_basisB, descriptorsB):
     spectral_A = tf.matmul(tf.linalg.pinv(pred_basisA), descriptorsA)
     spectral_B = tf.matmul(tf.linalg.pinv(pred_basisB), descriptorsB)
     spectral_At = tf.transpose(spectral_A, [0, 2, 1])
     spectral_Bt = tf.transpose(spectral_B, [0, 2, 1])
     tran = tf.matmul(tf.linalg.pinv(spectral_At),spectral_Bt)
-    basisA_transf = tf.matmul(pred_basisA, tran)
-    direct_loss = tf.reduce_mean(tf.square(basisA_transf - pred_basisB))
-    return direct_loss
+    basisA_transf, C = optimal_linear_transformation(pred_basisA, pred_basisB)
+    loss = tf.reduce_mean(tf.square(C - tran))
+    return loss
+
+
+

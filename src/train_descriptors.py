@@ -82,8 +82,9 @@ def build_graph():
             learning_rate = TU.get_learning_rate(batch)
 
             optimizer = tf.train.AdamOptimizer(learning_rate)
-            init_op = optimizer.minimize(total_loss, global_step=batch)
             basis_var = tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, scope='basis')
+            transf_var = tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, scope='transformation')
+            init_op = optimizer.minimize(total_loss, global_step=batch,var_list=transf_var)
             saver_pretrain_basis_network= tf.train.Saver(var_list =basis_var)
             # add summary to observe variables
             tf.summary.scalar('bn_decay', bn_decay)
