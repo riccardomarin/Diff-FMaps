@@ -59,9 +59,9 @@ python src/train_descriptors.py --log_dir "path to transformation model director
 
 To evaluate a model, you can use the "test.py" file. For example, to evaluate the pre-trained model on the Noise dataset:
 
-Run pretrained model on testset:
+Run pretrained model on FAUST testset:
 ```eval
-python .\src\test.py --i FAUST_noise_0.01 -n log_model --epoch=4427
+python ./src/test.py --i FAUST_noise_0.01 -n log_model --epoch=4427
 ```
 
 ## Results
