@@ -4,3 +4,4 @@ scipy
 plyfile
 trimesh
 open3d
+matplotlib

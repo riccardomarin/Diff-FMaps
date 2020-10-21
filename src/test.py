@@ -24,7 +24,9 @@ BATCH_SIZE = 1
 NUM_POINT = 1000
 N_BASIS = 20
 LOG_FOUT = ''
-MODEL = importlib.import_module('models.model')
+
+sys.path.append('./src/models/')
+MODEL = importlib.import_module('model')
 TU = TrainUtils(float(DECAY_STEP), LOG_FOUT, BASE_LEARNING_RATE, DECAY_RATE, BATCH_SIZE)
 
 def build_graph(MODEL_PATH):
