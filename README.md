@@ -1,9 +1,13 @@
 
 # Correspondence Learning via Linearly-invariant Embedding
 
+
 This repository is the official implementation of [Correspondence Learning via Linearly-invariant Embedding](https://arxiv.org/abs/2030.12345)
 
 This code was written by [Marie-Julie Rakotosaona](http://www.lix.polytechnique.fr/Labo/Marie-Julie.RAKOTOSAONA/) and [Riccardo Marin](http://profs.scienze.univr.it/~marin/).
+
+
+<img src="images/teaser.png" width="200">
 
 ## Requirements
 
