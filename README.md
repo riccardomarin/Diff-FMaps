@@ -6,8 +6,7 @@ This repository is the official implementation of [Correspondence Learning via L
 
 This code was written by [Marie-Julie Rakotosaona](http://www.lix.polytechnique.fr/Labo/Marie-Julie.RAKOTOSAONA/) and [Riccardo Marin](http://profs.scienze.univr.it/~marin/).
 
-
-<img src="images/teaser.png" width="200">
+**NEWS: A PyTorch implementation of the method can be found [here](https://github.com/riccardomarin/Diff-FMAPs-PyTorch)**
 
 ## Requirements
 
@@ -15,9 +14,6 @@ This code was written by [Marie-Julie Rakotosaona](http://www.lix.polytechnique.
 * CUDA and CuDNN
 * Python 2.7
 * Tensorflow 1.15
-
-
-
 
 
 ## Pre-trained Models
