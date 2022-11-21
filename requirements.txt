@@ -1,5 +1,5 @@
 h5py
-tensorflow==1.15.0
+tensorflow==2.9.3
 scipy
 plyfile
 trimesh
